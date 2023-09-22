@@ -28,36 +28,36 @@
 <thead>
   <tr>
     <th></th>
-    <th>Figma</th>
     <th>Result</th>
+    <th>Figma</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td align="left">Home Screen</td>
     <td align="center">
-      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/results/home_screen.png"/>
+      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/results/home_screen.png" height=500/>
     </td>
     <td align="center">
-      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/figma/home_screen.png"/>
+      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/figma/home_screen.png" height=500/>
     </td>
   </tr>
   <tr>
     <td align="left">Login Screen</td>
     <td align="center">
-      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/results/login_screen.png"/>
+      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/results/login_screen.png" height=500/>
     </td>
     <td align="center">
-      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/figma/login_screen.png"/>
+      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/figma/login_screen.png" height=500/>
     </td>
   </tr>
   <tr>
     <td align="left">Signup Screen</td>
     <td align="center">
-      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/results/signup_screen.png"/>
+      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/results/signup_screen.png" height=500/>
     </td>
     <td align="center">
-      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/figma/signup_screen.png"/>
+      <image alt="" src="https://raw.githubusercontent.com/fairuzmn/ist_test/main/screenshots/figma/signup_screen.png" height=500/>
     </td>
   </tr>
   <tr>
