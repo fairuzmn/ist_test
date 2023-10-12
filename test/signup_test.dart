@@ -1,29 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
-import 'package:isttest/app/controllers/login_controller.dart';
+import 'package:isttest/app/controllers/signup_controller.dart';
 
 void main() {
   //
   setUp(() {
-    Get.put<LoginController>(LoginController());
-    // TestWidgetsFlutterBinding.ensureInitialized();
+    Get.put<SignupController>(SignupController());
     WidgetsFlutterBinding.ensureInitialized();
   });
 
   tearDown(() {
-    LoginController loginController = Get.find<LoginController>();
-    loginController.resetForm();
+    SignupController signUpController = Get.find<SignupController>();
+    signUpController.resetForm();
   });
 
   test('validateFrom should be true when all filled', () {
     // setup
-    LoginController loginController = Get.find<LoginController>();
-    loginController.usernameController.text = 'admin';
-    loginController.passwordController.text = 'admin';
+    SignupController signUpController = Get.find<SignupController>();
+    signUpController.usernameController.text = 'admin';
+    signUpController.passwordController.text = 'admin';
+    signUpController.emailController.text = 'admin@admin.com';
 
     //  act
-    bool validated = loginController.validateForm();
+    bool validated = signUpController.validateForm();
 
     //  expect
     expect(validated, true);
@@ -31,36 +31,35 @@ void main() {
 
   test('validateFrom should be false when empty form', () {
     // setup
-    LoginController loginController = LoginController();
+    SignupController signUpController = SignupController();
 
     //  act
-    bool validated = loginController.validateForm();
+    bool validated = signUpController.validateForm();
 
     //  expect
     expect(validated, false);
   });
 
-  test('onLogin should be true when filled', () {
+  test('onSignup should be true when filled', () {
     // setup
-    LoginController loginController = LoginController();
-    loginController.usernameController.text = 'admin';
-    loginController.passwordController.text = 'admin';
+    SignupController signUpController = SignupController();
+    signUpController.usernameController.text = 'admin';
+    signUpController.passwordController.text = 'admin';
+    signUpController.emailController.text = 'admin@admin.com';
 
     //  act
-    bool validated = loginController.onLogin();
+    bool validated = signUpController.onSignup();
 
     //  expect
     expect(validated, true);
   });
 
-  test('onLogin should be false when not filled', () {
+  test('onSignup should be false when not filled', () {
     // setup
-    LoginController loginController = LoginController();
-    loginController.usernameController.text = '';
-    loginController.passwordController.text = 'admin';
+    SignupController signUpController = SignupController();
 
     //  act
-    bool validated = loginController.onLogin();
+    bool validated = signUpController.onSignup();
 
     //  expect
     expect(validated, false);
@@ -68,16 +67,30 @@ void main() {
 
   test('after reset form is empty', () {
     // setup
-    LoginController loginController = LoginController();
-    loginController.usernameController.text = 'admin';
-    loginController.passwordController.text = 'admin';
+    SignupController signUpController = SignupController();
+    signUpController.usernameController.text = 'admin';
+    signUpController.passwordController.text = 'admin';
 
     //  act
-    loginController.resetForm();
+    signUpController.resetForm();
 
-    bool validated = loginController.usernameController.text.isEmpty && loginController.passwordController.text.isEmpty;
+    bool validated = signUpController.usernameController.text.isEmpty && signUpController.passwordController.text.isEmpty && signUpController.emailController.text.isEmpty;
 
     //  expect
     expect(validated, true);
+  });
+
+  test('validateForm should false when email invalid', () {
+    // setup
+    SignupController signUpController = Get.find<SignupController>();
+    signUpController.usernameController.text = 'admin';
+    signUpController.passwordController.text = 'admin';
+    signUpController.emailController.text = 'admin';
+
+    //  act
+    bool validated = signUpController.validateForm();
+
+    //  expect
+    expect(validated, false);
   });
 }

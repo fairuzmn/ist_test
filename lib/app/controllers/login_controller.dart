@@ -6,12 +6,14 @@ class LoginController extends GetxController {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  void onLogin() {
+  bool onLogin() {
     bool validate = validateForm();
-    if (!validate) return;
+    if (!validate) return false;
 
     CustomHelpers.showToast("Success Login");
     resetForm();
+
+    return true;
   }
 
   bool validateForm() {

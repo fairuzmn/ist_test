@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:fluttertoast/fluttertoast.dart';
 
 class CustomHelpers {
   static void showToast(String msg, {bool durationShort = true, bool withCancel = true}) async {
+    if(Platform.environment.containsKey('FLUTTER_TEST')) return;
+
     if (withCancel) await Fluttertoast.cancel();
 
     Fluttertoast.showToast(

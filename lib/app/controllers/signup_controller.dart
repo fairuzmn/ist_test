@@ -8,12 +8,14 @@ class SignupController extends GetxController {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  void onSignup() {
+  bool onSignup() {
     bool validate = validateForm();
-    if (!validate) return;
+    if (!validate) return false;
 
     CustomHelpers.showToast("Success Signup");
     resetForm();
+
+    return true;
   }
 
   bool validateForm() {
